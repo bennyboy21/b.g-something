@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+    <title>-B.g</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+    
+    * {
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    :root {
+        --otherCurrent-Color:rgb(245, 245, 245);
+        --current-Color:rgb(25, 25, 25);
+        --actualCurrent-Color:rgb(25, 25, 25);
+    }
+
+    body {
+        height:fit-content;
+        margin:0px;
+        background:rgb(20, 20, 20);
+        /* opacity: 0; */
+    }
+
+    @media only screen and (min-width: 500px) {
+        body {
+            display:none; 
+            margin:0px;
+            background:rgb(20, 20, 20);
+            opacity: 0;
+        }
+    }
+
+    #code {
+        color:white;
+        width:calc(100vw - 45px);
+        padding: 15px 10px;
+        border-radius: 15px;
+        background:rgb(50, 50, 50, 0.2);
+        border:none;
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        font-weight: 900;
+        font-size: 20px;
+        font-style: italic;
+    }
+
+    #b-G {
+        width:100px;
+        height:100px;
+        font-size: 25px;
+        font-weight: 900;
+        font-style: italic;
+        background:rgb(50, 50, 50, 0.2);
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        border-radius: 100%;
+        padding-bottom:8px;
+        padding-right: 8px;
+        position:fixed;
+        top:50%;
+        left:50%;
+        margin-top: -150px;
+        transform:translate(-50%, -50%);
+        color:white;
+    }
+
+    #code-Button {
+        color:white;
+        width:calc(100vw - 45px);
+        padding: 15px 10px;
+        border-radius: 15px;
+        background:rgb(50, 50, 50, 0.2);
+        border:none;
+        position:fixed;
+        bottom:25px;
+        left:50%;
+        transform:translate(-50%);
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    input:focus {
+        outline:none;
+    }
+</style>
+
+<body>
+    <div id="b-G">-B.g</div>
+    <input type="text" id="code" placeholder="Code">
+    <button id="code-Button">Enter</button>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+    
+    * {
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    :root {
+        --otherCurrent-Color:rgb(245, 245, 245);
+        --current-Color:rgb(25, 25, 25);
+        --actualCurrent-Color:rgb(25, 25, 25);
+    }
+
+    body {
+        height:fit-content;
+        margin:0px;
+        background:rgb(20, 20, 20);
+        opacity: 0;
+    }
+
+    #fade-Top {
+        background:linear-gradient(to bottom, rgb(20, 20, 20), transparent);
+        width:100vw;
+        height:100px;
+        position:fixed;
+        top:0px;
+        left:0px;
+        z-index: 1;
+    }
+    
+    #fade-Bottom {
+        background:linear-gradient(to top, rgb(20, 20, 20), transparent);
+        width:100vw;
+        height:150px;
+        position:fixed;
+        bottom:0px;
+        left:0px;
+        z-index: 1;
+    }
+
+    @media only screen and (min-width: 500px) {
+        body {
+            display:none; 
+            margin:0px;
+            background:rgb(20, 20, 20);
+            opacity: 0;
+        }
+    }
+
+    #title-Change {
+        color:white;
+        width:calc(100vw - 45px);
+        padding: 10px;
+        border-radius: 15px;
+        background:rgb(50, 50, 50, 0.2);
+        border:none;
+        position:relative;
+        left:50%;
+        transform:translate(-50%);
+        margin-top: 100px;
+        font-weight: 900;
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    .textareaElement {
+        color:white;
+        width:calc(100vw - 45px);
+        padding: 0px 10px;
+        /* min-height:40px; */
+        border-radius: 15px;
+        background:rgb(50, 50, 50, 0.2);
+        /* min-height: 16px; */
+        border:none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0px auto;
+        margin-top: 15px;
+        font-weight: 900;
+        font-size: 15px;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .textareaElement, input:focus {
+        outline:none;
+    }
+
+    #back-Button {
+        width:30px;
+        height:30px;
+        border-radius: 100%;
+        padding:10px;
+        background:rgb(50, 50, 50, 0.2);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+        fill:white;
+        position:fixed;
+        z-index: 100;
+        left:15px;
+        top:23px;
+    }
+
+    #top-Title {
+        width:100vw;
+        text-align:center;
+        font-size: 35px;
+        font-weight: 900;
+        color:rgb(245, 245, 245);
+        z-index: 2;
+        position:fixed;
+        left:50%;
+        transform: translate(-50%);
+        top:20px;
+    }
+
+    #app-Title {
+        width:100vw;
+        font-size: 30px;
+        font-weight: 900;
+        font-style: italic;
+        color:rgba(65, 65, 65, 0.7);
+        text-align:center;
+    }
+
+    #app-Developer {
+        width:150px;
+        font-size: 15px;
+        font-weight: 900;
+        font-style: italic;
+        color:rgb(50, 50, 50, 1);
+        text-align:center;
+    }
+
+    #bottom-Break {
+        width:100vw;
+        height:275px;
+        display:flex;
+        flex-direction: column;
+        justify-content: top;
+        padding-top: 50px;
+        align-items:center;
+    }
+
+    #saving-Saved-Text {
+        font-size: 15px;
+        border-radius: 100px;
+        font-weight: 900;
+        padding:15px 20px;
+        background:rgb(50, 50, 50, 0.2);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+        color:white;
+        position:fixed;
+        z-index: 100;
+        right:15px;
+        top:23px;
+    }
+
+    .textareaElement > p {
+        margin:none;
+        padding:none;
+    }
+</style>
+
+<body>
+    <div id="fade-Top">
+        <svg onclick="goHome()" id="back-Button" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+        </svg>
+        <div id="top-Title">-B.g</div>
+        <div id="saving-Saved-Text">Saved</div>
+    </div>
+    <div id="fade-Bottom"></div>
+    <input type="text" id="title-Change">
+    <div class="textareaElement" contenteditable placeholder="Poem"></div>
+    <div id="bottom-Break">
+        <div id="app-Title">-B.G</div>
+        <div id="app-Developer">Created By Benjamin Burnell</div>
+    </div>
+</body>
+</html>
